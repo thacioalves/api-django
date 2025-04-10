@@ -4,5 +4,5 @@ class Exercicio(models.Model):
     nome = models.CharField(max_length=255)
     descricao = models.TextField()
 
-    def str(self):
+    def __str__(self):
         return self.nome
