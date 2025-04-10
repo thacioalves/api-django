@@ -1,8 +1,11 @@
-from django.shortcuts import render
-from rest_framework import viewsets
+from rest_framework import generics
 from .models import Exercicio
 from .serializers import ExercicioSerializer
 
-class ExercicioViewSet(viewsets.ModelViewSet):
+class ExercicioListCreate(generics.ListCreateAPIView):
+    queryset = Exercicio.objects.all()
+    serializer_class = ExercicioSerializer
+
+class ExercicioUpdateDelete(generics.RetrieveUpdateDestroyAPIView):
     queryset = Exercicio.objects.all()
     serializer_class = ExercicioSerializer

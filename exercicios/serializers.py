@@ -4,4 +4,4 @@ from .models import Exercicio
 class ExercicioSerializer(serializers.ModelSerializer):
     class Meta:
         model = Exercicio
-        fields = 'all'
+        fields = ['id', 'nome', 'descricao']
